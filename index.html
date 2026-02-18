@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Analytics | 모던 비즈니스 포트폴리오</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Noto Sans KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .forest-gradient {
+            background: linear-gradient(135deg, #1a2e1a 0%, #2d4a2d 100%);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="trees" class="text-emerald-800 w-8 h-8"></i>
+                <span class="text-2xl font-black text-emerald-900 tracking-tight">FOREST</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-10 font-medium text-gray-600">
+                <a href="#profile" class="hover:text-emerald-700 transition">프로필</a>
+                <a href="#analysis" class="hover:text-emerald-700 transition">상권분석</a>
+                <a href="#items" class="hover:text-emerald-700 transition">창업아이템</a>
+            </div>
+
+            <button onclick="toggleLoginModal()" class="bg-emerald-800 text-white px-6 py-2.5 rounded-full font-medium hover:bg-emerald-900 transition-all shadow-lg shadow-emerald-900/20">
+                로그인
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 forest-gradient text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white"></path>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    데이터로 분석하고<br>
+                    <span class="text-emerald-400">숲처럼 성장하는</span> 비즈니스
+                </h1>
+                <p class="text-lg md:text-xl text-emerald-100/80 mb-10 leading-relaxed">
+                    복잡한 시장 변화 속에서 명확한 상권 분석과 혁신적인 창업 아이템을 제안합니다. 
+                    당신의 성공적인 시작을 위한 파트너가 되겠습니다.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#analysis" class="bg-white text-emerald-900 px-8 py-4 rounded-xl font-bold hover:bg-emerald-50 transition">분석 리포트 보기</a>
+                    <a href="#profile" class="border border-emerald-400/50 text-emerald-100 px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">전문가 소개</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section id="profile" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-emerald-100 rounded-2xl rotate-3"></div>
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" 
+                             alt="Profile Image" 
+                             class="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <span class="text-emerald-700 font-bold tracking-widest uppercase mb-4 block">About Me</span>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">데이터와 현장을 연결하는<br>비즈니스 전략가</h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        지난 10년간 서울 및 주요 신도시의 500여 개 상권을 직접 발로 뛰며 분석해왔습니다. 
+                        단순한 통계를 넘어, 유동인구의 흐름과 심리를 파악하여 실패 없는 창업의 길을 제시합니다.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <p class="text-3xl font-bold text-emerald-800 mb-1">500+</p>
+                            <p class="text-sm text-gray-500 font-medium">누적 분석 상권</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl">
+                            <p class="text-3xl font-bold text-emerald-800 mb-1">92%</p>
+                            <p class="text-sm text-gray-500 font-medium">컨설팅 만족도</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Analysis Section -->
+    <section id="analysis" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold mb-4">정밀 상권 분석</h2>
+                <p class="text-gray-600">빅데이터와 인공지능을 활용하여 해당 지역의 수익성과 잠재력을 다각도로 평가합니다.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Analysis Card 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 card-hover">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="map-pin" class="text-emerald-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">입지 최적화 분석</h3>
+                    <p class="text-gray-600 mb-4">주변 경쟁 업체와 보행 동선을 분석하여 최적의 점포 위치를 선정합니다.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-emerald-600"></i>유동인구 흐름 파악</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-emerald-600"></i>접근성 및 시인성 평가</li>
+                    </ul>
+                </div>
+
+                <!-- Analysis Card 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 card-hover">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="trending-up" class="text-emerald-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">매출 예측 모델</h3>
+                    <p class="text-gray-600 mb-4">과거 소비 패턴과 트렌드를 분석하여 예상 월간 매출을 시뮬레이션합니다.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-emerald-600"></i>요일/시간별 매출 분석</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-emerald-600"></i>객단가 및 회전율 예측</li>
+                    </ul>
+                </div>
+
+                <!-- Analysis Card 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 card-hover">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="users" class="text-emerald-700"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">타겟 고객 세분화</h3>
+                    <p class="text-gray-600 mb-4">해당 상권의 주된 소비자층의 연령, 성별, 라이프스타일을 분석합니다.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-emerald-600"></i>핵심 타겟 페르소나 설정</li>
+                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 mr-2 text-emerald-600"></i>맞춤형 마케팅 전략 제안</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Startup Items Section -->
+    <section id="items" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4">추천 창업 아이템</h2>
+                    <p class="text-gray-600">현재 시장의 흐름과 수익성을 고려한 프리미엄 창업 아이템 리스트입니다.</p>
+                </div>
+                <button class="text-emerald-800 font-bold flex items-center hover:underline">
+                    전체 보기 <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Item 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=600" alt="Cafe" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-emerald-900">Food & Beverage</span>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1">프리미엄 로스터리 카페</h4>
+                    <p class="text-gray-500 text-sm">기대 수익: 월 800만원 ~</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=600" alt="Gym" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-emerald-900">Health & Wellness</span>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1">무인 스마트 헬스장</h4>
+                    <p class="text-gray-500 text-sm">기대 수익: 월 1,200만원 ~</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600" alt="Shop" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-emerald-900">Retail</span>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1">친환경 라이프스타일 샵</h4>
+                    <p class="text-gray-500 text-sm">기대 수익: 월 500만원 ~</p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=600" alt="Office" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-xs font-bold text-emerald-900">Education</span>
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1">AI 융합 스터디 센터</h4>
+                    <p class="text-gray-500 text-sm">기대 수익: 월 900만원 ~</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-950 text-emerald-100 py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 border-b border-white/10 pb-12 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="trees" class="text-emerald-400 w-8 h-8"></i>
+                        <span class="text-2xl font-black text-white tracking-tight">FOREST</span>
+                    </div>
+                    <p class="text-emerald-100/60 max-w-sm">
+                        우리는 데이터의 숲에서 당신의 비즈니스를 위한 가장 밝은 길을 찾습니다.
+                    </p>
+                </div>
+                <div class="flex gap-10">
+                    <div>
+                        <h5 class="text-white font-bold mb-4">Contact</h5>
+                        <p class="text-sm text-emerald-100/60">hello@forest-biz.com</p>
+                        <p class="text-sm text-emerald-100/60">02-1234-5678</p>
+                    </div>
+                    <div>
+                        <h5 class="text-white font-bold mb-4">Social</h5>
+                        <div class="flex space-x-4">
+                            <a href="#" class="hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                            <a href="#" class="hover:text-white transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                            <a href="#" class="hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-sm text-emerald-100/40">
+                &copy; 2024 Forest Business Consulting. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 z-[60] hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div onclick="toggleLoginModal()" class="fixed inset-0 bg-emerald-950/80 transition-opacity backdrop-blur-sm" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="relative inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-md sm:w-full">
+                <div class="px-8 py-10">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-50 rounded-full mb-4">
+                            <i data-lucide="user-plus" class="text-emerald-700 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">멤버십 로그인</h3>
+                        <p class="text-gray-500 mt-2">상권 분석 상세 리포트를 확인하세요.</p>
+                    </div>
+                    <form onsubmit="handleLogin(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">이메일 주소</label>
+                            <input type="email" placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">비밀번호</label>
+                            <input type="password" placeholder="••••••••" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition">
+                        </div>
+                        <div class="flex items-center justify-between text-sm">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded border-gray-300 text-emerald-600 focus:ring-emerald-500 mr-2">
+                                <span class="text-gray-600">아이디 저장</span>
+                            </label>
+                            <a href="#" class="text-emerald-700 font-medium">비밀번호 찾기</a>
+                        </div>
+                        <button type="submit" class="w-full bg-emerald-800 text-white py-4 rounded-xl font-bold hover:bg-emerald-900 transition-all shadow-lg shadow-emerald-900/10">
+                            로그인하기
+                        </button>
+                    </form>
+                    <div class="mt-8 pt-8 border-t border-gray-100 text-center">
+                        <p class="text-sm text-gray-500">계정이 없으신가요? <a href="#" class="text-emerald-700 font-bold ml-1">회원가입</a></p>
+                    </div>
+                </div>
+                <button onclick="toggleLoginModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- UI Message Component (for login simulation) -->
+    <div id="uiMessage" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-[100] hidden">
+        <div class="bg-emerald-900 text-white px-8 py-3 rounded-full shadow-2xl flex items-center space-x-3">
+            <i data-lucide="info" class="w-5 h-5 text-emerald-300"></i>
+            <span id="messageContent"></span>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Login Modal Logic
+        function toggleLoginModal() {
+            const modal = document.getElementById('loginModal');
+            modal.classList.toggle('hidden');
+            if (!modal.classList.contains('hidden')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Handle Login Simulation
+        function handleLogin(event) {
+            event.preventDefault();
+            showMessage("데모 환경에서는 로그인을 지원하지 않습니다.");
+            setTimeout(() => toggleLoginModal(), 1000);
+        }
+
+        // Custom Message Box
+        function showMessage(text) {
+            const messageEl = document.getElementById('uiMessage');
+            const contentEl = document.getElementById('messageContent');
+            contentEl.innerText = text;
+            messageEl.classList.remove('hidden');
+            
+            setTimeout(() => {
+                messageEl.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-0');
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('py-0');
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
